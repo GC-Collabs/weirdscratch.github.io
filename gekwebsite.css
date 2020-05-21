@@ -1,24 +1,23 @@
-body {
-	background-image: linear-gradient(to left, #44FF44, #448844);
-	color: #000088;
-	position: relative;
-	}
-th, td {
-	text-align: left;
+h1 {
+	font-family: Comic Sans MS;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+table {
+	border-collapse: collapse;
 }
 table, th, td {
-	border: 1px solid black;
-	padding: 1px;
+  border: 2px solid black;
+	padding: 3px;
 }
-commie {
-	color: #FFFF44;
-	background-color: #FF4444;
-	border: 5px solid #882222;
-}
-smol {
+small {
 	font-size: 10px;
 }
 big {
-	font-size: 25px;
-	font-weight: bold;	
+	font-size: 20px;
+	font-family: Arial Black;
+}
+bigger {
+	font-size: 50px;
+	font-weight: bold;
 }
