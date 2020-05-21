@@ -11,3 +11,11 @@ table, th, td {
 	border: 1px solid black;
 	padding: 0px;
 }
+commie {
+	color: #FFFF44;
+	background-color: #FF4444;
+	border: 5px solid #882222;
+}
+smol {
+	font-size: 10px;
+}
