@@ -1,6 +1,5 @@
 body {
 	background-image: linear-gradient(to left, #44FF44, #448844);
-	font-family: 'Balsamiq Sans', cursive;
 	color: #000088;
 	position: relative;
 	}
@@ -9,7 +8,7 @@ th, td {
 }
 table, th, td {
 	border: 1px solid black;
-	padding: 0px;
+	padding: 1px;
 }
 commie {
 	color: #FFFF44;
@@ -18,4 +17,8 @@ commie {
 }
 smol {
 	font-size: 10px;
+}
+big {
+	font-size: 25px;
+	font-weight: bold;	
 }
