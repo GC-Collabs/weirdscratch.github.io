@@ -2,7 +2,7 @@ body {
 	background-image: linear-gradient(to left, #44FF44, #448844);
 	font-family: 'Balsamiq Sans', cursive;
 	color: #000088;
-	position: absolute;
+	position: relative;
 	}
 th, td {
 	text-align: left;
