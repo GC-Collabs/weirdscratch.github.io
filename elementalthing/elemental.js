@@ -14,7 +14,7 @@ function getRGBValues(str) {
 		'g': vals[1],
 		'b': vals[2]
 	};
-}
+}3
 function createButton(elementthing, elementthing2, color) {
 	if (document.getElementById(elementthing2) == null) {
 	var button = document.createElement("button");
@@ -34,7 +34,12 @@ function createButton(elementthing, elementthing2, color) {
 	}
 }
 function elemresult(array) {
+	if (elemresult2(array,0) == undefined) {
+	elementnotfound();
+	}
+	else {
 	createButton(elemresult2(array,0),elemresult3(array,0)[1], elemresult3(array,0)[2]);
+	}
 }
 function elemresult2(combinations,id) {
 	for (var i = 0; i < Object.values(json).length; i++) {

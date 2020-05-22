@@ -1,6 +1,19 @@
 body {
 	font-family: 'Balsamiq Sans', cursive;
 }
+div.scroll { 
+	margin:4px, 4px; 
+	padding:4px; 
+	background-color: #DDDDDD; 
+	width: 326px; 
+	height: 226px; 
+	overflow-x: hidden; 
+	overflow-x: auto; 
+	text-align:justify; 
+	position: fixed;
+	right: 0%;
+	font-size: 13px;
+} 
 button {
 	width: 100px;
 	height: 100px;
