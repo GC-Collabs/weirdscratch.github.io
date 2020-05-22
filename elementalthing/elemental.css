@@ -11,7 +11,7 @@ button {
 	font-size: 12px;
 	outline: 0px;
 	border: 1px solid black;
-	border-radius: 12px;
+	border-radius: 12.5%;
 	animation: textshrink 1s;
 	transition:all 0.3s ease;
 }

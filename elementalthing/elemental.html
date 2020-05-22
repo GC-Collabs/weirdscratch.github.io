@@ -3,14 +3,13 @@
 		<title>Elemental</title>
 		<link rel="stylesheet" type="text/css" href="elemental.css">
 		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+		<script src="socket.io.js"></script>
 		<script src="elemental.json"></script>
-		<script src="elemental2.json"></script>
 		<script src="elemental.js"></script>
-		
 	</head>
 	
 	<body>
-		<button onclick="result()" style="width: 200px; height: 200px; background-color: #FF4444; color: #FFFFFF; position: absolute; bottom: 0px; right: 0px;" id="combo" >Click on elements to add them to the combo list.</button>
+		<button onclick="elemresult(combo)" style="width: 200px; height: 200px; background-color: #FF4444; color: #FFFFFF; position: fixed; bottom: 0px; right: 0px;" id="combo" >Click on elements to add them to the combo list.</button>
 		<p id="elements"><button onclick="combinationof()" id = "Earth" style="background-color: #BB6644;">Earth</button>
 		<button onclick="combinationof()" id = "Fire" style="background-color: #FF8844;">Fire</button>
 		<button onclick="combinationof()" id = "Air" style="background-color: #8888FF;">Air</button>
