@@ -14,6 +14,13 @@ function getRGBValues(str) {
 		'b': vals[2]
 	};
 }
+function init() {
+	loadJSON(function(response) {
+		// Parse JSON string into object
+		var actual_JSON = JSON.parse(response);
+		console.log(actual_JSON);
+	});
+}
 function createButton(element, color) {
 	var button = document.createElement("button");
 	button.innerHTML = element;
@@ -25,14 +32,6 @@ function createButton(element, color) {
 	}
 	button.setAttribute( "onClick", "combinationof()");
 	document.getElementById("elements").appendChild(button);
-}
-function getthestuff() {
-	$.getJSON('elemental.json', function (data) {
-		starterElements = data.starter;
-		compoundElements = data.compound;
-	}).error(function(){
-		console.log('error: json not loaded');
-	});
 }
 document.addEventListener('keyup', function (event) {
 	if (event.defaultPrevented) {
@@ -59,7 +58,4 @@ document.addEventListener('keyup', function (event) {
 });
 
 let combo = [];
-var allQuestions = new Array();
-getthestuff();
-var firstfour = starter.starter;
-var keys = Object.keys(firstfour);
+init();
