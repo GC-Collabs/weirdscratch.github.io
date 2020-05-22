@@ -14,7 +14,7 @@ function getRGBValues(str) {
 		'g': vals[1],
 		'b': vals[2]
 	};
-}3
+}
 function createButton(elementthing, elementthing2, color) {
 	if (document.getElementById(elementthing2) == null) {
 	var button = document.createElement("button");
