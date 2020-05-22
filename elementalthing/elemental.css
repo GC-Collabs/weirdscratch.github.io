@@ -1,0 +1,22 @@
+body {
+	font-family: 'Balsamiq Sans', cursive;
+}
+button {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-left: 3px;
+	margin-right: 3px;
+	width: 100px;
+	height: 100px;
+	font-size: 12px;
+	outline: 0px;
+	border: 1px solid black;
+	border-radius: 12px;
+	animation: textshrink 1s;
+	transition:all 0.3s ease;
+}
+button:hover {
+	-webkit-transform: scale(1.33);
+	-ms-transform: scale(1.33);
+	transform: scale(1.33);
+}
