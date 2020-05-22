@@ -29,7 +29,7 @@ function createButton(elementthing, elementthing2, color) {
 	if (rgb[0] + rgb[1] + rgb[2] < 383) {
 		button.style.color = "#FFFFFF";
 	}
-	button.setAttribute( "onClick", "combinationof()");
+	button.setAttribute("onClick", "combinationof()");
 	document.getElementById("elements").appendChild(button);
 	}
 }
@@ -39,6 +39,8 @@ function elemresult(array) {
 	}
 	else {
 	createButton(elemresult2(array,0),elemresult3(array,0)[1], elemresult3(array,0)[2]);
+	stuff = stuff.concat(elemresult3(array,0)[1]);
+	localStorage.setItem('elements', stuff);
 	}
 }
 function elemresult2(combinations,id) {
@@ -79,7 +81,15 @@ document.addEventListener('keyup', function (event) {
 		}
 	}
 })
-
-let combo = [];
-let comboshow = [];
-var json = {"Earth": [[1],"1","#BB6644"], "Fire": [[1],"2","#FF8844"], "Air": [[1],"3","#8888FF"], "Water": [[1],"4","#4444FF"], "Dust": [[" 1"," 3"],"5","#888888"]}
+var combo = [];
+var comboshow = [];
+var json = {"Earth": [[1],"1","#BB6644"], "Fire": [[1],"2","#FF8844"], "Air": [[1],"3","#8888FF"], "Water": [[1],"4","#4444FF"], "Dust": [[" 1"," 3"],"5","#888888"]};
+if (localStorage.getItem('elements') == "null") {
+	var stuff = new Array("");
+	localStorage.setItem('elements', stuff);
+} else {
+	var stuff = localStorage.getItem('elements').split(',');
+};
+for (i = 0; i < stuff.length; i++) { 
+	createButton(elemresult2(stuff[i],1),elemresult3(stuff[i],1)[1], elemresult3(stuff[i],1)[2]);
+}
