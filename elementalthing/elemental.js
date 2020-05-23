@@ -150,8 +150,7 @@ for (i = 0; i < Object.values(suggestions).length; i++) {
 	display(elemresult,elemresultcolor);
 	likes = 'Likes:' + Object.values(suggestions)[i][2];
 	dislikes = 'Dislikes:' + Object.values(suggestions)[i][3];
-	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('<center id="center">');
 	createButton2(likes,"like","#44FF44");
 	createButton2(dislikes,"dislike","#FF4444");
-	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('</center>');
+	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('<br/>');
 }
