@@ -49,7 +49,7 @@ function createButton2(elementthing, elementthing2, color) {
 		button.style.color = "#FFFFFF";
 	}
 	button.setAttribute("onClick", "vote()");
-	document.getElementById("center").appendChild(button);
+	document.getElementById("suggestions").appendChild(button);
 	}
 }
 function display(elementthing, color) {

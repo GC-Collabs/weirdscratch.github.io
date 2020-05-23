@@ -15,6 +15,7 @@ div.scroll {
 	font-size: 13px;
 	border: 1px solid #444444;
 	border-radius: 15.5px;
+	text-align: center;
 } 
 button {
 	width: 100px;
