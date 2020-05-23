@@ -99,8 +99,8 @@ document.addEventListener('keyup', function (event) {
 })
 var combo = [];
 var comboshow = [];
-var json = {"Earth": [[1],"1","rgb(224,96,64)"], "Fire": [[1],"2","#rgb(255,128,64)"], "Air": [[1],"3","rgb(128,128,255)"], "Water": [[1],"4","rgb(64,64,255)"], "Dust": [[" 1"," 3"],"5","rgb(128,128,128)"]};
-var suggestions = {"Elements": [[" 1"," 2"," 3"," 4"],"rgb(255,255,64)",10,10]};
+var json = {"Earth": [[1],"1","rgb(224,96,64)"], "Fire": [[1],"2","rgb(255,128,64)"], "Air": [[1],"3","rgb(128,128,255)"], "Water": [[1],"4","rgb(64,64,255)"], "Dust": [[" 1"," 3"],"5","rgb(128,128,128)"]};
+var suggestions = {"Elements": [[" 1", " 2", " 3", " 4"],"rgb(255,255,64)",10,10]};
 if (localStorage.getItem('elements') == "null") {
 	var stuff = new Array("");
 	localStorage.setItem('elements', stuff);
@@ -113,16 +113,16 @@ for (i = 0; i < stuff.length; i++) {
 		createButton(elemresult2(stuff[i],1),stuff[i], elemresult3(stuff[i],1)[2]);
 	}
 }
-for (i = 0; i < suggestions.length; i++) {
+for (i = 0; i < Object.values(suggestions).length; i++) {
 	var count = Object.values(suggestions)[i][0];
 	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('+(');
-	for (j = 0; j < count.length; i++) {
+	for (j = 0; j < count.length; j++) {
 		var tonumber = parseInt(count[j]).toString();
 		var elems = elemresult2(tonumber,1);
-		var elemcolors = Object.values(json)[elemresult3(tonumber,1)][2];
+		var elemcolors = elemresult3(tonumber,1)[2];
 		display(elems,elemcolors);
-		if (!(j = count.length)) {
-			document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(', ');
+		if (!(j == count.length - 1)) {
+			document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(',');
 		};
 	};
 	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(') =');
