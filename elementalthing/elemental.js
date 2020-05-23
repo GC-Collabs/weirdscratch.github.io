@@ -33,6 +33,25 @@ function createButton(elementthing, elementthing2, color) {
 	document.getElementById("elements").appendChild(button);
 	}
 }
+function createButton2(elementthing, elementthing2, color) {
+	if (document.getElementById(elementthing2) == null) {
+	var button = document.createElement("button");
+	button.innerHTML = elementthing;
+	button.id = elementthing2;
+	button.style.height = '50px';
+	button.style.backgroundColor = color;
+	button.style.marginTop = "3px";
+	button.style.marginBottom = "3px";
+	button.style.marginLeft = "3px";
+	button.style.marginRight = "3px";
+	var rgb = color.match(/\d+/g);
+	if (rgb[0] + rgb[1] + rgb[2] < 383) {
+		button.style.color = "#FFFFFF";
+	}
+	button.setAttribute("onClick", "vote()");
+	document.getElementById("center").appendChild(button);
+	}
+}
 function display(elementthing, color) {
 	var button = document.createElement("button");
 	button.innerHTML = elementthing;
@@ -125,8 +144,14 @@ for (i = 0; i < Object.values(suggestions).length; i++) {
 			document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(',');
 		};
 	};
-	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(') =');
+	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(')=');
 	var elemresult = Object.keys(suggestions)[i];
 	var elemresultcolor = Object.values(suggestions)[i][1];
 	display(elemresult,elemresultcolor);
+	likes = 'Likes:' + Object.values(suggestions)[i][2];
+	dislikes = 'Dislikes:' + Object.values(suggestions)[i][3];
+	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('<center id="center">');
+	createButton2(likes,"like","#44FF44");
+	createButton2(dislikes,"dislike","#FF4444");
+	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('</center>');
 }
