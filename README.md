@@ -1,1 +1,1 @@
-if you're looking for the gekwebsite and the dervsite and all those things in the original repository then go there. this one doesn't have that
+this is a 1 file version of https://github.com/GC-Collabs/weirdscratch.github.io/tree/game-thingy/elementalthing
