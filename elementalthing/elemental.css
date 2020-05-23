@@ -4,7 +4,7 @@ body {
 div.scroll { 
 	margin:4px, 4px; 
 	padding:4px; 
-	background-color: #DDDDDD; 
+	background-color: #DDDDDDBB; 
 	width: 326px; 
 	height: 226px; 
 	overflow-x: hidden; 

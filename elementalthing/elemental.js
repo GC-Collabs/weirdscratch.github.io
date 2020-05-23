@@ -5,7 +5,7 @@ function combinationof() {
 	document.getElementById("combo").style.width = Math.pow(combo.length,0.5)*100;
 	document.getElementById("combo").style.height = Math.pow(combo.length,0.5)*100;
 	document.getElementById("combo").innerHTML = comboshow.toString();
-	document.getElementById("combo").style.backgroundColor = "#44FF44";
+	document.getElementById("combo").style.backgroundColor = "#44FF44BB";
 }
 function getRGBValues(str) {
 	var vals = str.substring(str.indexOf('(') +1, a.length -1).split(', ');
@@ -87,13 +87,13 @@ document.addEventListener('keyup', function (event) {
 			document.getElementById("combo").innerHTML = "Click on elements to add them to the combo list.";
 			document.getElementById("combo").style.width = 200;
 			document.getElementById("combo").style.height = 200;
-			document.getElementById("combo").style.backgroundColor = "#FF4444";
+			document.getElementById("combo").style.backgroundColor = "#FF4444BB";
 		}
 		else {
 			document.getElementById("combo").style.width = Math.pow(combo.length,0.5)*100;
 			document.getElementById("combo").style.height = Math.pow(combo.length,0.5)*100;
 			document.getElementById("combo").innerHTML = comboshow.toString();
-			document.getElementById("combo").style.backgroundColor = "#44FF44";
+			document.getElementById("combo").style.backgroundColor = "#44FF44BB";
 		}
 	}
 })
