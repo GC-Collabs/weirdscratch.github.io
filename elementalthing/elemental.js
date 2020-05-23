@@ -33,11 +33,24 @@ function createButton(elementthing, elementthing2, color) {
 	document.getElementById("elements").appendChild(button);
 	}
 }
+function display(elementthing, color) {
+	var button = document.createElement("button");
+	button.innerHTML = elementthing;
+	button.style.backgroundColor = color;
+	button.style.marginTop = "3px";
+	button.style.marginBottom = "3px";
+	button.style.marginLeft = "3px";
+	button.style.marginRight = "3px";
+	var rgb = color.match(/\d+/g);
+	if (rgb[0] + rgb[1] + rgb[2] < 383) {
+		button.style.color = "#FFFFFF";
+	}
+	document.getElementById("suggestions").appendChild(button);
+}
 function elemresult(array) {
 	if (elemresult2(array,0) == undefined) {
 	elementnotfound();
-	}
-	else {
+	} else {
 	createButton(elemresult2(array,0),elemresult3(array,0)[1], elemresult3(array,0)[2]);
 	stuff = stuff.concat(elemresult3(array,0)[1]);
 	localStorage.setItem('elements', stuff);
@@ -56,6 +69,9 @@ function elemresult3(combinations,id) {
 			return Object.values(json)[i];
 		}
 	}
+}
+function elementnotfound() {
+	
 }
 document.addEventListener('keyup', function (event) {
 	if (event.defaultPrevented) {
@@ -83,13 +99,34 @@ document.addEventListener('keyup', function (event) {
 })
 var combo = [];
 var comboshow = [];
-var json = {"Earth": [[1],"1","#BB6644"], "Fire": [[1],"2","#FF8844"], "Air": [[1],"3","#8888FF"], "Water": [[1],"4","#4444FF"], "Dust": [[" 1"," 3"],"5","#888888"]};
+var json = {"Earth": [[1],"1","rgb(224,96,64)"], "Fire": [[1],"2","#rgb(255,128,64)"], "Air": [[1],"3","rgb(128,128,255)"], "Water": [[1],"4","rgb(64,64,255)"], "Dust": [[" 1"," 3"],"5","rgb(128,128,128)"]};
+var suggestions = {"Elements": [[" 1"," 2"," 3"," 4"],"rgb(255,255,64)",10,10]};
 if (localStorage.getItem('elements') == "null") {
 	var stuff = new Array("");
 	localStorage.setItem('elements', stuff);
 } else {
 	var stuff = localStorage.getItem('elements').split(',');
-};
+}
 for (i = 0; i < stuff.length; i++) { 
-	createButton(elemresult2(stuff[i],1),elemresult3(stuff[i],1)[1], elemresult3(stuff[i],1)[2]);
+	var thetype = typeof stuff[i]
+	if (thetype == "string" && !(stuff[i] == "")) {
+		createButton(elemresult2(stuff[i],1),stuff[i], elemresult3(stuff[i],1)[2]);
+	}
+}
+for (i = 0; i < suggestions.length; i++) {
+	var count = Object.values(suggestions)[i][0];
+	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat('+(');
+	for (j = 0; j < count.length; i++) {
+		var tonumber = parseInt(count[j]).toString();
+		var elems = elemresult2(tonumber,1);
+		var elemcolors = Object.values(json)[elemresult3(tonumber,1)][2];
+		display(elems,elemcolors);
+		if (!(j = count.length)) {
+			document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(', ');
+		};
+	};
+	document.getElementById("suggestions").innerHTML = document.getElementById("suggestions").innerHTML.concat(') =');
+	var elemresult = Object.keys(suggestions)[i];
+	var elemresultcolor = Object.values(suggestions)[i][1];
+	display(elemresult,elemresultcolor);
 }

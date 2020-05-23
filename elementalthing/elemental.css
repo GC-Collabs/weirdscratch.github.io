@@ -13,16 +13,19 @@ div.scroll {
 	position: fixed;
 	right: 0%;
 	font-size: 13px;
+	border: 1px solid #444444;
+	border-radius: 15.5px;
 } 
 button {
 	width: 100px;
 	height: 100px;
 	font-size: 12px;
 	outline: 0px;
-	border: 1px solid black;
+	border: 1px solid #444444;
 	border-radius: 12.5%;
 	animation: textshrink 1s;
 	transition:all 0.3s ease;
+	font-family: 'Balsamiq Sans', cursive;
 }
 button:hover {
 	-webkit-transform: scale(1.33);
