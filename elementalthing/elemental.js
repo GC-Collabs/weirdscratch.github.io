@@ -117,7 +117,7 @@ document.addEventListener('keyup', function (event) {
 var combo = [];
 var comboshow = [];
 var json = {"Earth": [[1],"1","rgb(224,96,64)"], "Fire": [[1],"2","rgb(255,128,64)"], "Air": [[1],"3","rgb(128,128,255)"], "Water": [[1],"4","rgb(64,64,255)"], "Dust": [[" 1"," 3"],"5","rgb(128,128,128)"]};
-var suggestions = {"Elements": [[" 1", " 2", " 3", " 4"],"rgb(255,255,64)",10,10], "Elementses": [[" 1", " 2", " 3", " 4"],"rgb(255,255,64)",10,10]};
+var suggestions = {"Elements": [[" 1", " 2", " 3", " 4"],"rgb(255,255,64)",10,10], "Elementses": [[" 1", " 2"],"rgb(255,255,64)",10,10]};
 if (localStorage.getItem('elements') == "null") {
 	var stuff = new Array("");
 	localStorage.setItem('elements', stuff);
